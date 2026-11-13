@@ -158,6 +158,15 @@
     margin-bottom: 14px;
   }
   .popup p { color: #667; font-size: .9rem; margin-bottom: 18px; }
+  .popup .facilitador {
+    background: #eef4fb;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    font-size: .88rem;
+    color: #234;
+  }
+  .popup .facilitador strong { color: #0d4a8f; display: block; margin-top: 2px; font-size: .95rem; }
   .popup .btn-wsp { display: block; width: 100%; }
 </style>
 </head>
@@ -185,6 +194,7 @@
 <script>
 const DATOS = [["6104168",1,"Juan Á. M."],["10026068",1,"Iván A. C."],["4360287",1,"Nelson A. R."],["2666939",1,"Juan A. E."],["3499635",1,"Abdel A. V."],["5950934",1,"María A. D. C."],["3360695",1,"Sergio A. B."],["6791816",1,"Gonzalo A. C."],["2383715",1,"Ana A. T."],["6159633",1,"Ramiro A. Q."],["8409882",1,"Lorgio A. A."],["9157532",1,"David A. C."],["4980434",1,"Edgar A. C."],["4801041",1,"Ana A. G."],["4807102",1,"Ivan A. H."],["7081338",1,"Calixto A. M."],["6799949",1,"Luis A. T."],["6378060",1,"Nolberta A. L."],["6832733",1,"Lennis B. C."],["2301876",1,"Juan B. P."],["2368554",1,"Juan B. M."],["4251679",1,"Lilian B. H."],["6074604",1,"Mérida C. T."],["6883699",1,"Gualberto C. H."],["5960485",1,"Efrain C. M."],["8264415",1,"Edson C. M."],["2208919",1,"Hugo C. C."],["8415412",1,"Javier C. Q."],["6952794",1,"Williams C. U."],["1362706",1,"Grosby C. H."],["4261767",2,"María C."],["2681092",2,"Carmen C. M."],["6093714",2,"Ruddy C. L."],["8350459",2,"Luis C. A."],["9999699",2,"Gualberto C. F."],["3480729",2,"Eulogio C. K."],["9060383",2,"Rosalía C. Á."],["5742041",2,"Eddy C. A."],["4250802",2,"Wilma C. C."],["4967116",2,"Vania C. M."],["3356973",2,"Giovana C. M."],["6852219",2,"Marco C. C."],["4982210",2,"Irene C. K."],["4377850",2,"Marcos C. N."],["3331912",2,"Omar C."],["2635503",2,"Fernando F. J."],["4326922",2,"Willam F. C."],["10038353",2,"Jhesenia F. F."],["7049800",2,"Roxana F. F."],["2016984",2,"Rogelio F. H."],["4763460",2,"Andrez F. P."],["4952969",2,"Jhovanna G. F."],["6874003",2,"Freddy G. A."],["2630332",2,"Jose G. G."],["4369225",2,"Jose G. A."],["6887356",2,"Milton H. D. L. C."],["4818501",2,"Jorge H. M."],["4919217",2,"Johannes H. L."],["9875861",2,"Roly K. C."],["4845692",2,"Orlando L. C."],["8318114",3,"Guido L. H."],["2695644",3,"Carlos L. A."],["3427621",3,"Pedro L. V."],["3486838",3,"Oscar M. F."],["9980596",3,"Rosario M. P."],["9226894",3,"Remedios M."],["4808712",3,"Remigio M. C."],["6199480",3,"Pablo M. G."],["6080199",3,"Denisse M. H."],["9159898",3,"Gustavo M. M."],["8415465",3,"Ronald M. M."],["8431866",3,"Freddy M. P."],["8332659",3,"Olga M. H."],["7068209",3,"Leticia M. M."],["4969338",3,"Julio M. Q."],["2602654",3,"Alfredo M. M."],["3323064",3,"Víctor M. P."],["4262775",3,"Jose M. M."],["7024261",3,"William M. Q."],["2374887",3,"Walter M. C."],["2317675",3,"Rosario M. V."],["6430736",3,"Luz M. C."],["4303811",3,"Teresa N. S."],["6178591",3,"Claribel O. V."],["2707295",3,"Jesus P. R."],["3455154",3,"Miriam P. C."],["4875088",3,"Ramiro P. M."],["9143558",3,"Liz P. F."],["7801456",3,"José P. R."],["4373581",3,"Pedro P. G."],["3441401-1T",4,"Jaime Q. T."],["4895312",4,"Lourdes Q. C."],["9909574",4,"Maria Q. C."],["9968611",4,"Amador Q. M."],["4937644",4,"Ruben Q. P."],["6038998",4,"Russell Q. T."],["4376075",4,"Yaneth R. C."],["9960109",4,"Sonia R. Q."],["6048345",4,"Lourdes R. Z."],["4273503",4,"José R. S."],["6181252",4,"Mabel R. T."],["2710481",4,"Alejandro R. E."],["8311371",4,"Elvis R. R."],["7029532",4,"Santos S. C."],["6122750",4,"Angela S. C."],["4960313",4,"Jimmy S. C."],["4275127",4,"Theddy T. M."],["4284129",4,"E T. Q."],["5985367",4,"Ariel T. M."],["5983811",4,"Amalia T. F."],["9958298",4,"Alvaro V. R."],["4745843",4,"Gladys V. H."],["5956113",4,"Lila V. S."],["3375755",4,"H V. H."],["2448092",4,"Rodolfo V. Q."],["6077890",4,"Rene V. Q."],["4291082",4,"Walter Y. C."],["4802627",4,"Nikky Z. L."]];
 const LINKS = {"1":"https://chat.whatsapp.com/HRHva4UAGc7JGdStQ8O04J","2":"https://chat.whatsapp.com/K2faviwQcEqIaNhQKcujd6","3":"https://chat.whatsapp.com/CQtFet3ic8L1Uh3Oh56vNa","4":"https://chat.whatsapp.com/Do2iRrF3mPbBLfrFNKfglr"};
+const FACILITADORES = {"1":"Américo Walter Pacheco Ángulo","2":"Limber Henry Gómez Mendoza","3":"Jorge Mauro Fernández Criales","4":"Jeanette Roxana Ibáñez Choque"};
 
 const form = document.getElementById('form');
 const input = document.getElementById('ci');
@@ -221,6 +231,7 @@ form.addEventListener('submit', function (e) {
         '<div class="nombre">' + nombre + '</div>' +
         '<div class="grupo-num">' + g + '</div>' +
         '<h2>Tu grupo es el Grupo ' + g + '</h2>' +
+        '<div class="facilitador">👨‍🏫 Facilitador de tu curso:<strong>' + FACILITADORES[g] + '</strong></div>' +
         '<p>Si este eres tú, únete únicamente a este grupo. Si entras a otro, serás removido por el administrador.</p>' +
         '<a class="btn-wsp" href="' + link + '" target="_blank" rel="noopener">Unirme al Grupo ' + g + ' →</a>' +
       '</div>' +
